@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="description" content="Delete a Phillic account and associated account data." />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src https://*.supabase.co; base-uri 'none'; form-action 'none'; upgrade-insecure-requests"
+    />
+    <title>Delete Phillic Account · Tomorrow Night LLC</title>
+    <link rel="canonical" href="https://tomorrownightllc.github.io/phillic/delete-account/" />
+    <link rel="stylesheet" href="../../assets/site.css" />
+    <script defer src="./config.js"></script>
+    <script defer src="./delete-account.js"></script>
+  </head>
+  <body>
+    <main class="shell">
+      <p class="company">Tomorrow Night LLC · Phillic</p>
+      <h1>Delete your Phillic account</h1>
+      <p class="lede">
+        This public page lets you authenticate directly with Phillic's Supabase account service and
+        permanently delete your Phillic cloud account without reinstalling the app.
+      </p>
+
+      <section class="notice danger" aria-labelledby="before-delete">
+        <h2 id="before-delete">Before you delete</h2>
+        <ul>
+          <li>
+            Deletion permanently removes your Phillic account and the matching RevenueCat customer
+            record. The server deletes RevenueCat data first and deletes the Supabase Auth user only
+            after that succeeds.
+          </li>
+          <li>
+            <strong>Deleting your account does not cancel an Apple App Store or Google Play subscription.</strong>
+            Cancel through the store account used to subscribe so future store billing stops.
+          </li>
+          <li>
+            Hydration entries and profile fields are stored only on your devices in this release. The
+            web cannot access or erase them. Delete Phillic or clear its app storage on each device to
+            remove those local records.
+          </li>
+        </ul>
+      </section>
+
+      <section class="card" aria-labelledby="delete-form-title">
+        <p class="eyebrow">Secure deletion</p>
+        <h2 id="delete-form-title">Verify your Phillic account</h2>
+        <form id="sign-in-form">
+          <label for="email">Phillic account email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required />
+          <label for="password">Phillic account password</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required />
+          <p class="helper">
+            Your credentials are sent over HTTPS directly to Supabase. They are not stored by this page.
+          </p>
+          <button type="submit">Verify account</button>
+        </form>
+
+        <div id="confirmation" hidden>
+          <p>
+            Verified as <strong id="signed-in-email"></strong>. Type <strong>DELETE</strong> to confirm
+            permanent account deletion.
+          </p>
+          <label for="confirmation-input">Confirmation</label>
+          <input id="confirmation-input" type="text" autocomplete="off" spellcheck="false" />
+          <button class="danger" id="delete-button" type="button" disabled>Delete account permanently</button>
+        </div>
+
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+      </section>
+
+      <h2>What is deleted and when</h2>
+      <p>
+        After successful verification and confirmation, the deletion normally completes immediately:
+        the Phillic RevenueCat customer is removed first, then the Supabase Auth account. If the first
+        step fails, the Supabase account remains and the page reports an error instead of partially
+        completing the request. Limited security logs, store transaction records, legal records, or
+        isolated backup copies may remain only as described in the Privacy Policy and applicable law.
+      </p>
+
+      <h2>Need help instead?</h2>
+      <p>
+        If you cannot authenticate, contact <a href="mailto:phillicpro@gmail.com?subject=Phillic%20account%20deletion">phillicpro@gmail.com</a>
+        from the email address associated with the account. Do not email your password. Support may need
+        to verify account ownership before acting on a manual request.
+      </p>
+
+      <nav class="phillic-links" aria-label="Phillic resources">
+        <a href="../privacy/">Privacy</a>
+        <a href="../terms/">Terms</a>
+        <a href="../support/">Support</a>
+        <a aria-current="page" href="../delete-account/">Delete account</a>
+      </nav>
+      <footer>© 2026 Tomorrow Night LLC. Phillic is a Tomorrow Night LLC product.</footer>
+    </main>
+  </body>
+</html>
