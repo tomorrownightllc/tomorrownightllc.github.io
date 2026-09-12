@@ -238,3 +238,20 @@ footer {
     scroll-behavior: auto !important;
   }
 }
+
+.catchall-email {
+  margin: 4rem 0 0;
+  text-align: center;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  font-weight: 800;
+}
+
+.catchall-email a {
+  color: var(--aqua-dark);
+  text-decoration: none;
+}
+
+.catchall-email a:hover,
+.catchall-email a:focus-visible {
+  text-decoration: underline;
+}
